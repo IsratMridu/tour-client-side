@@ -10,6 +10,7 @@ import Home from './components/Home/Home';
 import AuthProvider from './components/Context/AuthProvider';
 import NotFound from './components/NotFound/NotFound';
 import Login from './components/Login/Login';
+import Register from './components/Register/Register';
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route exact path='/login'>
             <Login></Login>
+          </Route>
+          <Route exact path='/register'>
+            <Register></Register>
           </Route>
           <Route  path='*'>
             <NotFound></NotFound>

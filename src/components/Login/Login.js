@@ -3,8 +3,9 @@ import login_photo from  '../../images/login_page_image.jpg'
 import useAuth from '../Context/useAuth';
 import './Login.css'
 
+
 const Login = () => {
-    const {handlePassword, handleEmail, handleLogin} = useAuth();
+    const {handlePassword, handleEmail, handleLogin, handleGoogleSignIn, facebookLogin} = useAuth();
     return (
         <div>
             
@@ -27,6 +28,15 @@ const Login = () => {
                        <input type='submit' value='LOGIN'  className='p-2 w-25 my-3 bg-success text-white' />
 
                    </form>
+
+                   <div className='mt-5 text-center'>
+                       <button className='btn btn-danger mb-4' onClick={handleGoogleSignIn}>Sign In With Google</button>
+                       <br/>
+                       {/* <button className='btn btn-secondary mb-4 ' onClick={handleGithubLogin}>Sign In With GitHub</button> */}
+                       {/* <br/> */}
+                       <button className='btn btn-primary mb-4 ' onClick={facebookLogin}>Sign In With Facebook</button>
+
+                   </div>
 
                </div>
               
