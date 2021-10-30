@@ -5,7 +5,7 @@ import './Login.css'
 
 
 const Login = () => {
-    const {handlePassword, handleEmail, handleLogin, handleGoogleSignIn, facebookLogin} = useAuth();
+    const {handlePassword, handleEmail,  handleGoogleSignIn} = useAuth();
     return (
         <div>
             
@@ -20,7 +20,7 @@ const Login = () => {
                <div className='col-lg-4 col-md-4 col-sm-12 col-12 '>
 
                <h3 className="text-center mb-3 mt-5">Login to Book Tour Packages.</h3>
-                   <form className='text-center  py-5' onClick={handleLogin}>
+                   <form className='text-center  py-5' >
                        <input type='email'required onBlur={handleEmail} placeholder='Enter Your Email:' className='p-2 w-50 my-3  text-danger' />
                        <br/>
                        <input type='password'required onBlur={handlePassword} placeholder='Enter Your Password:' className='p-2 w-50 my-3 text-danger' />
@@ -34,7 +34,7 @@ const Login = () => {
                        <br/>
                        {/* <button className='btn btn-secondary mb-4 ' onClick={handleGithubLogin}>Sign In With GitHub</button> */}
                        {/* <br/> */}
-                       <button className='btn btn-primary mb-4 ' onClick={facebookLogin}>Sign In With Facebook</button>
+                       {/* <button className='btn btn-primary mb-4 ' onClick={facebookLogin}>Sign In With Facebook</button> */}
 
                    </div>
 

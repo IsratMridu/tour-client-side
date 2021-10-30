@@ -5,7 +5,7 @@ import React from 'react';
 import useAuth from '../Context/useAuth';
 
 const Register = () => {
-    const {handleEmail, handlePassword, handleRegister } = useAuth();
+    const {handleEmail, handlePassword, handleRegister} = useAuth();
     return (
         <div>
             <div className='row g-0'>
@@ -18,6 +18,7 @@ const Register = () => {
                 <div className='col-lg-5 col-md-5 col-sm-12 col-12'>
                     <h3 className='mt-5 text-center'>Don't Have An Accout? Register Here. </h3>
                     <form className='text-center mt-5' onSubmit={handleRegister}>
+                        
                         <input type='email' placeholder='Enter Email: ' onBlur={handleEmail} className='p-2 w-50 mb-4'/>
                         <br/>
                         <input type='password' placeholder='Enter Password: ' onBlur={handlePassword} className='p-2 w-50 mb-4'/>

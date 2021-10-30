@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import firebaseInitialization from "../Firebase/firebase.init";
-import { GoogleAuthProvider,  getAuth, signInWithPopup, onAuthStateChanged, signOut, FacebookAuthProvider, createUserWithEmailAndPassword     } from "firebase/auth";
+import { GoogleAuthProvider,  getAuth, signInWithPopup, onAuthStateChanged, signOut,  createUserWithEmailAndPassword  } from "firebase/auth";
 
 
 
@@ -12,15 +12,17 @@ const auth = getAuth();
 
 const googleProvider = new GoogleAuthProvider();
 
-const facebookProvider = new FacebookAuthProvider();
+// const facebookProvider = new FacebookAuthProvider();
 
 // const githubProvider = new GithubAuthProvider();
 
 const useFirebase = () =>{
+    
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
     const [user, setUser] = useState({});
 
+    
     
 
     const handlePassword = (event) =>{
@@ -40,14 +42,14 @@ const useFirebase = () =>{
   })
     }
 
-    const facebookLogin = () =>{
-        signInWithPopup(auth, facebookProvider)
-  .then((result) => {
-    console.log(result.user);
+  //   const facebookLogin = () =>{
+  //       signInWithPopup(auth, facebookProvider)
+  // .then((result) => {
+  //   console.log(result.user);
 
    
-  })
-    }
+  // })
+  //   }
 
 
 //    const  handleGithubLogin = () =>{
@@ -62,11 +64,7 @@ const useFirebase = () =>{
 //     }
 
 
-    const handleLogin = (event) =>{
-        event.preventDefault();
-        console.log(email, password);
-        
-    }
+  // 
 
     const handleLogout = () =>{
         signOut(auth).then(() => {
@@ -75,14 +73,27 @@ const useFirebase = () =>{
 
     }
 
-    const handleRegister = () => {
+
+
+    
+
+
+
+    const handleRegister = (event) => {
+      event.preventDefault();
 
         createUserWithEmailAndPassword(auth, email, password)
-  .then((result) => {
+      .then((result) => {
+        
     
-    console.log(result);
+        console.log(result.user);
   })
     }
+
+
+    
+
+    
 
     useEffect(()=>{
         onAuthStateChanged(auth, (user) => {
@@ -96,7 +107,7 @@ const useFirebase = () =>{
 
 
 
-    return {handlePassword, handleEmail, handleLogin, handleGoogleSignIn, user, handleLogout, facebookLogin, handleRegister };
+    return {handlePassword, handleEmail,  handleGoogleSignIn, user, handleLogout, handleRegister};
 }
 
 export default useFirebase;
