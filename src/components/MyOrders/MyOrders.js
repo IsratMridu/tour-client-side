@@ -37,12 +37,12 @@ const MyOrders = () => {
     
 
     return (
-        <div className='text-center container ng-success pt-5'>
+        <div className='text-center  bg-primary py-5'>
             <div className='container row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1'>
                 {
                     myOrders.map(myOrder =>
                         <div className="col" key={myOrder._id}>
-                        <div className="card">
+                        <div className="card bg-success text-warning">
                           
                           <div className="card-body">
                             <h5 className="card-title">User: {myOrder?.userName}</h5>
