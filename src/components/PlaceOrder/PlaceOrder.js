@@ -48,7 +48,7 @@ const PlaceOrder = () => {
             {
                 alert('Booking Done Successfully');
                 e.target.reset();
-                setPlan({});
+                // setPlan({});
 
 
             }

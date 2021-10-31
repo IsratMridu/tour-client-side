@@ -10,7 +10,7 @@ const Header = () => {
     return (
         <>
         
-        <Navbar bg="dark" variant="dark" sticky="top" >
+        <Navbar bg="dark" variant="dark" sticky="top"  collapseOnSelect expand="lg">
           <Container>
           <Navbar.Brand as={Link} to="/">TourisMado</Navbar.Brand>
          
@@ -21,7 +21,7 @@ const Header = () => {
     {/* <Nav.Link as={Link} to="/packages">Packages</Nav.Link> */}
     
     {/* <Nav.Link as={Link} to="/login">Login</Nav.Link> */}
-    <Nav.Link as={Link} className='text-warning' to="/contact">Contact Us</Nav.Link>
+    {/* <Nav.Link as={Link} className='text-warning' to="/contact">Contact Us</Nav.Link> */}
     
             
       <Navbar.Text>
