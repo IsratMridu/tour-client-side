@@ -36,7 +36,7 @@ const Header = () => {
             <Nav.Link as={Link} className='text-warning' to="/manageAllOrders">Manage All Orders  </Nav.Link>
             <Nav.Link as={Link} className='text-warning' to="/addPackages">Add Packages </Nav.Link>
             
-            <Nav.Link as={Link} className='text-info' to="/user">{user.displayName}  </Nav.Link>
+            <Nav.Link as={Link} className='text-info' to="/home">{user.displayName}  </Nav.Link>
           
           <button className='btn btn-danger rounded' onClick={handleLogout}> LOGOUT</button>
 

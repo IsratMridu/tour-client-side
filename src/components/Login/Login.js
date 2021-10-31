@@ -12,6 +12,16 @@ const Login = () => {
     const redirect_uri = location.state?.from || '/';
 
 
+    const handleGoogleLogin = () =>{
+        handleGoogleSignIn()
+        .then(result =>{
+            history.push(redirect_uri);
+        })
+
+
+    }
+
+
 
     
 
@@ -41,7 +51,7 @@ const Login = () => {
                    </form> */}
 
                    <div className=' text-center'>
-                       <button className='btn btn-danger mb-4' onClick={handleGoogleSignIn}>Sign In With Google</button>
+                       <button className='btn btn-danger mb-4' onClick={handleGoogleLogin}>Sign In With Google</button>
                        <br/>
                        {/* <button className='btn btn-secondary mb-4 ' onClick={handleGithubLogin}>Sign In With GitHub</button>
                        <br/> */}
