@@ -49,7 +49,7 @@ const UpdateBooking = () => {
             if(data.modifiedCount>0){
                 alert('Status Updated Successfully');
                 setBooking({});
-                console.log(booking);
+                
             }
         });
     }

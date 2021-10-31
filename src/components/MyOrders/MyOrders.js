@@ -37,7 +37,7 @@ const MyOrders = () => {
     
 
     return (
-        <div className='text-center container ng-success text-white pt-5'>
+        <div className='text-center container ng-success pt-5'>
             <div className='container row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1'>
                 {
                     myOrders.map(myOrder =>
@@ -45,10 +45,10 @@ const MyOrders = () => {
                         <div className="card">
                           
                           <div className="card-body">
-                            <h5 className="card-title">User: {myOrder.userName}</h5>
-                            <p className="card-text">Travel Country: {myOrder.country}</p>
-                            <p className="card-text">Capital: {myOrder.capital}</p>
-                            <h3 className="card-text">Status: {myOrder.orderStatus}</h3>
+                            <h5 className="card-title">User: {myOrder?.userName}</h5>
+                            <p className="card-text">Travel Country: {myOrder?.country}</p>
+                            <p className="card-text">Capital: {myOrder?.capital}</p>
+                            <h3 className="card-text">Status: {myOrder?.orderStatus}</h3>
                             <button className='btn btn-danger px-3 mt-4 ' onClick={()=> deleteMyOrder(myOrder._id)}>Delete</button>
                           </div>
                         </div>
