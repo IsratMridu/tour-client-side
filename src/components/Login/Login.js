@@ -57,9 +57,9 @@ const Login = () => {
                        <br/> */}
                        {/* <button className='btn btn-primary mb-4 ' onClick={facebookLogin}>Sign In With Facebook</button> */}
 
-                       <Link to='/register'>
+                       {/* <Link to='/register'>
                        <h6>Dont' Have an Account? Kindly Register First.</h6>
-                       </Link>
+                       </Link> */}
 
                    </div>
 
