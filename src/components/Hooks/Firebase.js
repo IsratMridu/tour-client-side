@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import firebaseInitialization from "../Firebase/firebase.init";
-import { GoogleAuthProvider,  getAuth, signInWithPopup, onAuthStateChanged, signOut,  createUserWithEmailAndPassword  } from "firebase/auth";
+import { GoogleAuthProvider,  getAuth, signInWithPopup, onAuthStateChanged, signOut,  signInWithEmailAndPassword, FacebookAuthProvider  } from "firebase/auth";
 
 
 
@@ -12,7 +12,7 @@ const auth = getAuth();
 
 const googleProvider = new GoogleAuthProvider();
 
-// const facebookProvider = new FacebookAuthProvider();
+const facebookProvider = new FacebookAuthProvider();
 
 // const githubProvider = new GithubAuthProvider();
 
@@ -42,53 +42,56 @@ const useFirebase = () =>{
   })
     }
 
-  //   const facebookLogin = () =>{
-  //       signInWithPopup(auth, facebookProvider)
-  // .then((result) => {
-  //   console.log(result.user);
+    const facebookLogin = () =>{
+        signInWithPopup(auth, facebookProvider)
+  .then((result) => {
+    // console.log(result.user);
 
    
+  })
+    }
+
+
+  //  const  handleGithubLogin = () =>{
+
+  //   signInWithPopup(auth, githubProvider)
+  // .then((result) => {
+   
+  //   console.log(result.user);
+    
   // })
+
   //   }
 
 
-//    const  handleGithubLogin = () =>{
-
-//     signInWithPopup(auth, githubProvider)
-//   .then((result) => {
-   
-//     console.log(result.user);
-    
-//   })
-
-//     }
-
-
-  // 
-
-    const handleLogout = () =>{
-        signOut(auth).then(() => {
-            setUser({});
-          })
-
-    }
+  
 
 
 
-    
+  //   const handleRegister = (event) => {
+  //     event.preventDefault();
 
-
-
-    const handleRegister = (event) => {
-      event.preventDefault();
-
-        createUserWithEmailAndPassword(auth, email, password)
-      .then((result) => {
+  //       createUserWithEmailAndPassword(auth, email, password)
+  //     .then((result) => {
         
     
-        console.log(result.user);
-  })
+  //       console.log(result.user);
+  // })
+  //   }
+
+    const handleLogin = (event) =>{
+      event.preventDefault();
+      return signInWithEmailAndPassword(auth, email, password);
+   
     }
+
+    
+    const handleLogout = () =>{
+      signOut(auth).then(() => {
+          setUser({});
+        })
+
+  }
 
 
     
@@ -107,7 +110,7 @@ const useFirebase = () =>{
 
 
 
-    return {handlePassword, handleEmail,  handleGoogleSignIn, user, handleLogout, handleRegister};
+    return {handlePassword, handleEmail,  handleGoogleSignIn, user, handleLogout,  handleLogin, facebookLogin};
 }
 
 export default useFirebase;

@@ -22,36 +22,44 @@ const Header = () => {
     
     {/* <Nav.Link as={Link} to="/login">Login</Nav.Link> */}
     <Nav.Link as={Link} className='text-warning' to="/contact">Contact Us</Nav.Link>
+    
             
       <Navbar.Text>
       
    
      
        {
-          user.email?
+          user.displayName ?
          <div className='d-flex'>
 
             <Nav.Link as={Link} className='text-warning' to="/myOrders">My Orders  </Nav.Link>
             <Nav.Link as={Link} className='text-warning' to="/manageAllOrders">Manage All Orders  </Nav.Link>
             <Nav.Link as={Link} className='text-warning' to="/addPackages">Add Packages </Nav.Link>
             
-            <Nav.Link as={Link} className='text-info' to="/user">{user.email}  </Nav.Link>
+            <Nav.Link as={Link} className='text-info' to="/user">{user.displayName}  </Nav.Link>
           
           <button className='btn btn-danger rounded' onClick={handleLogout}> LOGOUT</button>
 
           
 
          </div>
-          :
-          <div className='d-flex'>
-            <Nav.Link as={Link}  to="/login" className='text-warning'>Login</Nav.Link>
-            <Nav.Link as={Link} className='text-warning' to="/register">Register</Nav.Link>
 
-          </div>
+         :
+
+         <div className='d-flex'>
+
+
+            <Nav.Link as={Link}  to="/login" className='text-warning'>Login</Nav.Link>
+            {/* <Nav.Link as={Link} className='text-warning' to="/register">Register</Nav.Link>    */}
+
+         </div>
+          
           
           
           
         }
+       
+       
      
      
       

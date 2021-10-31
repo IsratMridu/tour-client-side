@@ -12,7 +12,9 @@ const NotFound = () => {
                 </Link>
             </div>
             
-            <img src={not_found} alt='not_found' className='img-fluid size' />
+            <div className='text-center'>
+            <img src={not_found} alt='not_found' className='w-50' />
+            </div>
         </div>
     );
 };

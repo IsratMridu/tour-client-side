@@ -3,6 +3,7 @@ import img from '../../images/shirtless-fit-male-standing-rocky-cliff-near-light
 
 import React from 'react';
 import useAuth from '../Context/useAuth';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
     const {handleEmail, handlePassword, handleRegister} = useAuth();
@@ -16,15 +17,19 @@ const Register = () => {
                 </div>
 
                 <div className='col-lg-5 col-md-5 col-sm-12 col-12'>
-                    <h3 className='mt-5 text-center'>Don't Have An Accout? Register Here. </h3>
+                    <h3 className='mt-5 text-center'>Don't Have An Account? Register Here. </h3>
                     <form className='text-center mt-5' onSubmit={handleRegister}>
                         
-                        <input type='email' placeholder='Enter Email: ' onBlur={handleEmail} className='p-2 w-50 mb-4'/>
+                        <input type='email' placeholder='Enter Email: ' onBlur={handleEmail} className='p-2 w-50 mb-5'/>
                         <br/>
-                        <input type='password' placeholder='Enter Password: ' onBlur={handlePassword} className='p-2 w-50 mb-4'/>
+                        <input type='password' placeholder='Enter Password: ' onBlur={handlePassword} className='p-2 w-50 mb-5'/>
                         <br/>
-                        <input type='submit' value=' REGISTER' className='p-2 w-25 bg-success text-white rounded'/>
+                        <input type='submit' value=' REGISTER' className='p-2 w-25 bg-success text-white rounded mb-5'/>
                         <br/>
+
+                        <Link to='/login'>
+                        <h6>Already Have an Account? Kindly Go To The Login Page.</h6>
+                        </Link>
 
 
 

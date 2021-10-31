@@ -10,7 +10,13 @@ import Home from './components/Home/Home';
 import AuthProvider from './components/Context/AuthProvider';
 import NotFound from './components/NotFound/NotFound';
 import Login from './components/Login/Login';
-import Register from './components/Register/Register';
+import Footer from './components/Footer/Footer';
+import PlaceOrder from './components/PlaceOrder/PlaceOrder';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import AllOrders from './components/AllOrders/AllOrders';
+import MyOrders from './components/MyOrders/MyOrders';
+import AddPackage from './components/AddPackage/AddPackage';
+import UpdateBooking from './components/UpdateBooking/UpdateBooking';
 
 function App() {
   return (
@@ -28,13 +34,29 @@ function App() {
           <Route exact path='/login'>
             <Login></Login>
           </Route>
-          <Route exact path='/register'>
-            <Register></Register>
-          </Route>
+          <PrivateRoute exact path='/myOrders'>
+            <MyOrders></MyOrders>
+          </PrivateRoute>
+          <PrivateRoute exact path='/manageAllOrders'>
+            <AllOrders></AllOrders>
+          </PrivateRoute>
+          <PrivateRoute exact path='/addPackages'>
+            <AddPackage></AddPackage>
+          </PrivateRoute>
+          <PrivateRoute exact path='/update/:id'>
+           <UpdateBooking></UpdateBooking>
+          </PrivateRoute>
+
+          
+          <PrivateRoute exact path='/placeorder/:id'>
+            <PlaceOrder></PlaceOrder>
+          </PrivateRoute>
           <Route  path='*'>
             <NotFound></NotFound>
           </Route>
         </Switch>
+        <Footer></Footer>
+        
       </Router>
      </AuthProvider>
      
