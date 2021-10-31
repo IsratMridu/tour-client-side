@@ -9,7 +9,7 @@ const Home = () => {
    
 
     useEffect(()=>{
-        fetch('http://localhost:5000/packages')
+        fetch('https://grim-village-10038.herokuapp.com/packages')
         .then(res => res.json())
         .then(data => setPackages(data));
     },[])

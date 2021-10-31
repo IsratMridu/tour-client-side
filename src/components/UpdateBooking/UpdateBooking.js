@@ -36,7 +36,7 @@ const UpdateBooking = () => {
 
     const updateDone= (e) =>{
         e.preventDefault();
-        fetch(`http://localhost:5000/update/${id}`,{
+        fetch(`https://grim-village-10038.herokuapp.com/update/${id}`,{
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

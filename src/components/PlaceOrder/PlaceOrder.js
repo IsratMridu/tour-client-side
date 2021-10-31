@@ -12,7 +12,7 @@ const PlaceOrder = () => {
     const {id} = useParams();
     const [plan, setPlan] = useState({});
     useEffect(()=>{
-        fetch(`http://localhost:5000/order/${id}`)
+        fetch(`https://grim-village-10038.herokuapp.com/order/${id}`)
         .then(res => res.json())
         .then(data => setPlan(data))
     },[])
@@ -34,7 +34,7 @@ const PlaceOrder = () => {
 
         // console.log(singleOrder);
 
-        fetch('http://localhost:5000/addUserOrder',{
+        fetch('https://grim-village-10038.herokuapp.com/addUserOrder',{
             method: 'POST',
             headers:{
                 'content-type' : 'application/json'

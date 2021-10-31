@@ -18,7 +18,7 @@ const AddPackage = () => {
             description: descriptionRef.current.value 
         };
 
-        fetch('http://localhost:5000/addNewPackage',{
+        fetch('https://grim-village-10038.herokuapp.com/addNewPackage',{
             method: "POST",
             headers: {
                 "content-type" : "application/json"

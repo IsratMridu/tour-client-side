@@ -6,7 +6,7 @@ const AllOrders = () => {
     
     const [orders,setOrders] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/allOrders')
+        fetch('https://grim-village-10038.herokuapp.com/allOrders')
         .then(res => res.json())
         .then(data => setOrders(data))
     },[])
@@ -16,7 +16,7 @@ const AllOrders = () => {
     const deleteOrder = (id) =>{
        const confirm = window.prompt('Are You Sure You Want To Delete?');
        if(confirm){
-        fetch(`http://localhost:5000/deleteOrder/${id}`,{
+        fetch(`https://grim-village-10038.herokuapp.com/deleteOrder/${id}`,{
             method: 'DELETE',
             headers: {
                 'content-type' : 'application/json'
